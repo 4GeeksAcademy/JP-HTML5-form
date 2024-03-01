@@ -1,0 +1,24 @@
+.card-header{
+    background-color: #f7f7f7;
+}
+
+.row3 {
+}
+
+.row4 {
+}
+
+.row5 {
+}
+
+.row6 {
+}
+
+.row7 {
+    display: flex;
+    justify-content: right;
+}
+
+.row7 button{
+    margin-left: 5px;
+}
