@@ -10,7 +10,7 @@
     </head>
     <body>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-        <div class="container mt-5">
+        <div class="container mt-5 mb-5">
             <div class="card">
                 <div class="card-header">
                     <div class="row1">
@@ -18,7 +18,7 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <form class="row g-3">
+                    <form class="row g-3 needs-validation">
                         <div class="col-12">
                             <div class="text-start bg-danger-subtle fs-6 rounded-2 p-3 text-danger-emphasis border border-danger-subtle border-1">
                                 <b>Some fields are missing</b>
@@ -27,35 +27,35 @@
 
                         <div class="col-md-5">
                             <label for="inputCardNumber" class="form-label">Card #</label>
-                            <input id="inputCardNumber" class="form-control" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="16" placeholder="XXXXXXXXXXXXXXXX">
+                            <input id="inputCardNumber" class="form-control" type="tel" inputmode="numeric" pattern="\d*" maxlength="16" placeholder="XXXXXXXXXXXXXXXX" required>
                         </div>
                         <div class="col-md-3">
                             <label for="inputCVC" class="form-label">CVC #</label>
-                            <input id="inputCVC" class="form-control" type="text" inputmode="numeric" maxlength="0000" placeholder="0000">
+                            <input id="inputCVC" class="form-control" type="tel" inputmode="numeric" pattern="\d*" maxlength="4" placeholder="0000" required>
                         </div>
-                          
                         <div class="col-md-4">
-                            <label for="inputAmount" class="form-label">Amount</label>
-                            <input id="inputAmount"  class="form-control" type="tel" inputmode="numeric" placeholder="Amount">
-                        </div>
-
+                            <label class="" for="autoSizingInputGroup">Amount</label>
+                            <div class="input-group  mt-2">
+                              <div class="input-group-text">$</div>
+                              <input type="tel" class="form-control" id="autoSizingInputGroup" placeholder="Amount" required>
+                            </div>
+                          </div>
                         <div class="col-md-6">
                             <label for="inputFirst" class="form-label">First Name</label>
-                            <input type="text" class="form-control" id="inputFirst">
+                            <input type="text" class="form-control" id="inputFirst" required>
                         </div>
                         <div class="col-md-6">
                             <label for="inputLast" class="form-label">Last name</label>
-                            <input type="text" class="form-control" id="inputLast">
+                            <input type="text" class="form-control" id="inputLast" required>
                         </div>
-
                         <div class="col-md-6">
                             <label for="inputCity" class="form-label">City</label>
-                            <input type="text" class="form-control" id="inputCity">
+                            <input type="text" class="form-control" id="inputCity" required>
                         </div>
                         <div class="col-md-3">
                             <label for="inputState" class="form-label">State</label>
-                            <select class="form-select" aria-label="Default select example">
-                                <option value=""disabled selected>Pick a State</option>
+                            <select class="form-select" aria-label="Default select example" required>
+                                <option value="" disabled selected>Pick a State</option>
                                 <option value="AL">Alabama</option>
 	                            <option value="AK">Alaska</option>
 	                            <option value="AZ">Arizona</option>
@@ -111,21 +111,28 @@
                         </div>
                         <div class="col-md-3">
                             <label for="inputPostal" class="form-label">Postal</label>
-                            <input type="tel" class="form-control" id="inputPostal">
+                            <input type="tel" class="form-control" id="inputPostal" required>
                         </div>
 
                         <div class="col-md-6">
                             <b>We accept:</b><br>
-                                <button type="button" class="btn btn-secondary" disabled>
-                                    <input type="radio" class="mastercard">
-                                    <label for=""><i class="fa-brands fa-cc-mastercard" style="color: #ffffff;"></i></label>
-                                    <input type="radio" class="visa">
-                                    <label for=""><i class="fa-brands fa-cc-visa" style="color: #ffffff;"></i></label>
-                                    <input type="radio" class="paypal">
-                                    <label for=""><i class="fa-brands fa-cc-diners-club" style="color: #ffffff;"></i></label>
-                                    <input type="radio" class="amex">
-                                    <label for=""><i class="fa-brands fa-cc-amex" style="color: #ffffff;"></i></label>
-                                </button>
+                            <div class="card text-center text-bg-secondary mb-3" style="max-width: 18rem;">
+                                <div class="card-body radios">
+                                    <div>
+                                    <input type="radio" name="cc" class="mastercard" required>
+                                    <label for=""><i  class="fa-brands fa-cc-mastercard fa-xl" style="color: #ffffff;"></i></label>
+                                    </div><div>
+                                    <input type="radio" name="cc" class="visa" required>
+                                    <label for=""><i class="fa-brands fa-cc-visa fa-xl" style="color: #ffffff;"></i></label>
+                                    </div><div>
+                                    <input type="radio" name="cc" class="paypal" required>
+                                    <label for=""><i class="fa-brands fa-cc-diners-club fa-xl" style="color: #ffffff;"></i></label>
+                                    </div><div>
+                                    <input type="radio" name="cc" class="amex" required>
+                                    <label for=""><i class="fa-brands fa-cc-amex fa-xl" style="color: #ffffff;"></i></label>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="col-md-6">
                             <label for="exampleFormControlTextarea1" class="form-label">Message</label>
@@ -134,14 +141,14 @@
                                   Add any notes here.
                                 </div>
                         </div>
-                    </form>
                 </div>
                 <div class="card-footer">
                     <div class="row7">
                         <button type="button" class="btn btn-secondary">Cancel</button>
-                        <button type="button" class="btn btn-primary">Send</button>
+                        <button type="submit" class="btn btn-primary">Send</button>
                     </div>
                 </div>
+                    </form>
             </div>
         </div>
     </body>

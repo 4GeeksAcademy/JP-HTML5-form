@@ -22,3 +22,12 @@
 .row7 button{
     margin-left: 5px;
 }
+
+.radios {
+    display: flex;
+    justify-content: space-between;
+}
+
+.col-md-6 .card {
+    margin-top: 1rem;
+}
